@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import RepoItem from './RepoItem'
 
 class RepoList extends Component {
   state = {
@@ -10,7 +11,7 @@ class RepoList extends Component {
   }
 
   componentDidMount() {
-    const token = '';
+    const token = ''
 
     let url = 'https://api.github.com/repos/prontotools/data-swarm/pulls'
     fetch(url, {
@@ -86,105 +87,26 @@ class RepoList extends Component {
   render() {
     return (
       <div className="ui grid">
-        <div className="four wide column">
-          <div className="ui card">
-            <div className="content">
-              <div className="header">Data Swarm</div>
-            </div>
-            <div className="content">
-              <h4 className="ui sub header"><i className="github alternate icon"></i> prontotools/data-swarm</h4>
-              <div className="ui small feed">
-                <div className="event">
-                  <div className="content">
-                    <div className="summary center aligned">
-                       <a href="https://github.com/prontotools/data-swarm/pulls/" target="_blank" rel="noopener noreferrer">{ this.state.data_swarm }</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="four wide column">
-          <div className="ui card">
-            <div className="content">
-              <div className="header">SimpleSat</div>
-            </div>
-            <div className="content">
-              <h4 className="ui sub header"><i className="github alternate icon"></i> prontotools/simplesat</h4>
-              <div className="ui small feed">
-                <div className="event">
-                  <div className="content">
-                    <div className="summary center aligned">
-                       <a href="https://github.com/prontotools/simplesat/pulls/" target="_blank" rel="noopener noreferrer">{ this.state.simplesat }</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="four wide column">
-          <div className="ui card">
-            <div className="content">
-              <div className="header">SimpleSat Microservices</div>
-            </div>
-            <div className="content">
-              <h4 className="ui sub header"><i className="github alternate icon"></i> prontotools/simplesat-microservices</h4>
-              <div className="ui small feed">
-                <div className="event">
-                  <div className="content">
-                    <div className="summary center aligned">
-                       <a href="https://github.com/prontotools/simplesat-microservices/pulls/" target="_blank" rel="noopener noreferrer">{ this.state.simplesat_microservices }</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="four wide column">
-          <div className="ui card">
-            <div className="content">
-              <div className="header">iPhoenix</div>
-            </div>
-            <div className="content">
-              <h4 className="ui sub header"><i className="github alternate icon"></i> prontotools/iphoenix</h4>
-              <div className="ui small feed">
-                <div className="event">
-                  <div className="content">
-                    <div className="summary center aligned">
-                       <a href="https://github.com/prontotools/iphoenix/pulls/" target="_blank" rel="noopener noreferrer">{ this.state.iphoenix }</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="four wide column">
-          <div className="ui card">
-            <div className="content">
-              <div className="header">Pronto Core</div>
-            </div>
-            <div className="content">
-              <h4 className="ui sub header"><i className="github alternate icon"></i> prontodev/pronto-core</h4>
-              <div className="ui small feed">
-                <div className="event">
-                  <div className="content">
-                    <div className="summary center aligned">
-                       <a href="https://github.com/prontodev/pronto-core/pulls/" target="_blank" rel="noopener noreferrer">{ this.state.pronto_core }</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <RepoItem
+          name="Data Swarm"
+          slug="prontotools/data-swarm"
+          number_of_prs={this.state.data_swarm} />
+        <RepoItem
+          name="SimpleSat"
+          slug="prontotools/simplesat"
+          number_of_prs={this.state.simplesat} />
+        <RepoItem
+          name="SimpleSat Microservices"
+          slug="prontotools/simplesat-microservices"
+          number_of_prs={this.state.simplesat_microservices} />
+        <RepoItem
+          name="iPhoenix"
+          slug="prontotools/iphoenix"
+          number_of_prs={this.state.iphoenix} />
+        <RepoItem
+          name="Pronto Core"
+          slug="prontodev/pronto-core"
+          number_of_prs={this.state.pronto_core} />
       </div>
     )
   }
