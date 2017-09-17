@@ -2,7 +2,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import App from '../App'
 import Header from '../Header'
-import PullRequestList from '../PullRequestList'
+import RepoList from '../RepoList'
 
 describe('<App />', () => {
   let wrapper
@@ -14,7 +14,7 @@ describe('<App />', () => {
   it('should contain components', () => {
     expect(wrapper.containsAllMatchingElements([
       <Header />,
-      <PullRequestList />,
+      <RepoList />,
     ])).toEqual(true)
   })
 
@@ -26,7 +26,7 @@ describe('<App />', () => {
     expect(wrapper.find(Header)).toHaveLength(1)
   })
 
-  it('should render one PullRequestList component', () => {
-    expect(wrapper.find(PullRequestList)).toHaveLength(1)
+  it('should render one RepoList component', () => {
+    expect(wrapper.find(RepoList)).toHaveLength(1)
   })
 })

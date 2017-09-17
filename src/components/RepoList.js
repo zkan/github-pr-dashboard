@@ -10,7 +10,7 @@ class RepoList extends Component {
   }
 
   componentDidMount() {
-    const token = 'eaa3a10dd893b4bd21732550b4686feea72c0522';
+    const token = '';
 
     let url = 'https://api.github.com/repos/prontotools/data-swarm/pulls'
     fetch(url, {
@@ -190,4 +190,4 @@ class RepoList extends Component {
   }
 }
 
-export default PullRequestList
+export default RepoList

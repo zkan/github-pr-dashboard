@@ -1,12 +1,12 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import PullRequestList from '../PullRequestList'
+import RepoList from '../RepoList'
 
-describe('<PullRequestList />', () => {
+describe('<RepoList />', () => {
   let wrapper
 
   beforeEach(() => {
-    wrapper = shallow(<PullRequestList />)
+    wrapper = shallow(<RepoList />)
   })
 
   it('should have one element with `.ui.grid` class', () => {
