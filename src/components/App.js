@@ -5,7 +5,7 @@ import PullRequestList from './PullRequestList'
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="ui main container">
         <Header />
         <PullRequestList />
       </div>
