@@ -1,0 +1,18 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: circleci/node:7.10
+    working_directory: ~/github-pr-dashboard
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - node-deps-{{ checksum "package.json" }}
+      - run: yarn install
+      - save_cache:
+          key: node-deps-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+      - run: yarn test
