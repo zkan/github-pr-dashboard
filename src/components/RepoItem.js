@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 const RepoItem = (props) => (
   <div className="four wide column">
