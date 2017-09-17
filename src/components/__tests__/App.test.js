@@ -18,6 +18,10 @@ describe('<App />', () => {
     ])).toEqual(true)
   })
 
+  it('should contain semantic-ui `ui main container` class', () => {
+    expect(wrapper.find('.ui .main .container')).toHaveLength(1)
+  })
+
   it('should render one Header component', () => {
     expect(wrapper.find(Header)).toHaveLength(1)
   })
