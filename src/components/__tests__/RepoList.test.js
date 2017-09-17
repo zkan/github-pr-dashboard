@@ -14,7 +14,7 @@ describe('<RepoList />', () => {
     expect(wrapper.find('.ui.grid')).toHaveLength(1)
   })
 
-  it('should have five RepoItem elements', () => {
-    expect(wrapper.find(RepoItem)).toHaveLength(5)
+  it('should have six RepoItem elements', () => {
+    expect(wrapper.find(RepoItem)).toHaveLength(6)
   })
 })

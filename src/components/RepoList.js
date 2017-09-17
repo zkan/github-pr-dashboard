@@ -8,6 +8,7 @@ class RepoList extends Component {
     simplesat_microservices: 0,
     iphoenix: 0,
     pronto_core: 0,
+    bypronto: 0,
   }
 
   componentDidMount() {
@@ -20,10 +21,10 @@ class RepoList extends Component {
       }
     }).then(res => res.json())
       .then(json => {
-        const data_swarm = json.length
+        const number_of_prs = json.length
         this.setState({
           ...this.prevState,
-          data_swarm: data_swarm,
+          data_swarm: number_of_prs,
         })
       })
 
@@ -34,10 +35,10 @@ class RepoList extends Component {
       }
     }).then(res => res.json())
       .then(json => {
-        const simplesat = json.length
+        const number_of_prs = json.length
         this.setState({
           ...this.prevState,
-          simplesat: simplesat,
+          simplesat: number_of_prs,
         })
       })
 
@@ -48,10 +49,10 @@ class RepoList extends Component {
       }
     }).then(res => res.json())
       .then(json => {
-        const simplesat_microservices = json.length
+        const number_of_prs = json.length
         this.setState({
           ...this.prevState,
-          simplesat_microservices: simplesat_microservices,
+          simplesat_microservices: number_of_prs,
         })
       })
 
@@ -62,10 +63,10 @@ class RepoList extends Component {
       }
     }).then(res => res.json())
       .then(json => {
-        const iphoenix = json.length
+        const number_of_prs = json.length
         this.setState({
           ...this.prevState,
-          iphoenix: iphoenix,
+          iphoenix: number_of_prs,
         })
       })
 
@@ -76,10 +77,24 @@ class RepoList extends Component {
       }
     }).then(res => res.json())
       .then(json => {
-        const pronto_core = json.length
+        const number_of_prs = json.length
         this.setState({
           ...this.prevState,
-          pronto_core: pronto_core,
+          pronto_core: number_of_prs,
+        })
+      })
+
+    url = 'https://api.github.com/repos/prontodev/bypronto/pulls'
+    fetch(url, {
+      headers: {
+        Authorization: `token ${token}`
+      }
+    }).then(res => res.json())
+      .then(json => {
+        const number_of_prs = json.length
+        this.setState({
+          ...this.prevState,
+          bypronto: number_of_prs,
         })
       })
   }
@@ -107,6 +122,10 @@ class RepoList extends Component {
           name="Pronto Core"
           slug="prontodev/pronto-core"
           number_of_prs={this.state.pronto_core} />
+        <RepoItem
+          name="Bypronto"
+          slug="prontodev/bypronto"
+          number_of_prs={this.state.bypronto} />
       </div>
     )
   }
