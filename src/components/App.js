@@ -1,9 +1,14 @@
 import React, { Component } from 'react'
+import Header from './Header'
+import PullRequestList from './PullRequestList'
 
 class App extends Component {
   render() {
     return (
-      <h1>GitHub PR Dashboard</h1>
+      <div>
+        <Header />
+        <PullRequestList />
+      </div>
     )
   }
 }
